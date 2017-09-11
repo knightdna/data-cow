@@ -14,5 +14,6 @@
 
 .gradle
 .idea
+data-cow.iml
 
 gradle.properties
