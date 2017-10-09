@@ -1,5 +1,6 @@
 # Compiled class file
 *.class
+build/
 
 # Log file
 *.log
@@ -16,5 +17,5 @@
 gradle.properties
 
 # IntelliJ files
-.idea
-.iml
+.idea/
+*.iml

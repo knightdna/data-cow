@@ -14,7 +14,6 @@ public class FirstTest {
             "gender",
             dependencyAttributes -> Gender.Female
     );
-    gender.setValue(Gender.Female);
 
     Attribute<String> lastName = new StandardAttribute<>(
             "lastName",
@@ -33,6 +32,7 @@ public class FirstTest {
 
     @Test
     public void simpleTest() {
+        gender.setValue(Gender.Female);
 
         DocumentBuilder documentBuilder = new DocumentBuilder()
                 .addAttribute(gender)
