@@ -4,9 +4,9 @@ import com.github.johan.backstrom.common.core.Attribute;
 import com.github.johan.backstrom.common.core.model.random.RandomNumberGenerator;
 import com.github.johan.backstrom.common.core.model.random.RandomPicker;
 import com.github.johan.backstrom.common.core.model.random.WeightedRandomizedCollection;
-import com.github.johan.backstrom.data.person.Gender;
-import com.github.johan.backstrom.data.person.sweden.DataHelper;
 import com.github.johan.backstrom.data.person.sweden.dictionary.SwedishNameDictionary;
+import com.github.johan.backstrom.entities.person.Gender;
+import com.github.johan.backstrom.entities.util.DataHelper;
 
 import java.util.Arrays;
 import java.util.List;

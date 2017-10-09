@@ -1,8 +1,8 @@
 package com.github.johan.backstrom.entities.util;
 
 import com.github.johan.backstrom.common.core.Attribute;
-import com.github.johan.backstrom.common.core.model.random.Randomness;
-import com.github.johan.backstrom.common.standard.DefaultRandomnessImplementation;
+import com.github.johan.backstrom.common.util.Randomness;
+import com.github.johan.backstrom.common.util.DefaultRandomnessImplementation;
 import com.github.johan.backstrom.entities.Country;
 import com.github.johan.backstrom.entities.person.Gender;
 import com.google.common.base.Strings;
@@ -57,6 +57,10 @@ public class DataHelper {
 
     public static String getRandomLandlinePhoneNumber() {
         return String.format("%s%s", "+46", getRandomZeroPaddedNumber(800000000, 899999999, 9));
+    }
+
+    public static String getRandomMobilePhoneNumber() {
+        return String.format("%s%s", "+46", getRandomZeroPaddedNumber(700000000, 769999999, 9));
     }
 
     public static String getRandomMobilePhoneNumber(Country country) {

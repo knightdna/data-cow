@@ -1,6 +1,4 @@
-package com.github.johan.backstrom.common.standard;
-
-import com.github.johan.backstrom.common.core.Randomness;
+package com.github.johan.backstrom.common.util;
 
 import java.util.Random;
 

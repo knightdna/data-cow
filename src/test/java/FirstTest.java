@@ -4,8 +4,8 @@ import com.github.johan.backstrom.common.core.Attribute;
 import com.github.johan.backstrom.common.standard.StandardAttribute;
 import com.github.johan.backstrom.data.person.generator.FamilyNameGenerator;
 import com.github.johan.backstrom.data.person.generator.FirstNameGenerator;
-import com.github.johan.backstrom.data.person.sweden.DataHelper;
-import com.github.johan.backstrom.data.person.Gender;
+import com.github.johan.backstrom.entities.person.Gender;
+import com.github.johan.backstrom.entities.util.DataHelper;
 import org.junit.Test;
 
 public class FirstTest {
