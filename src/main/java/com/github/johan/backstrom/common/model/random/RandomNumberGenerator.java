@@ -1,4 +1,4 @@
-package com.github.johan.backstrom.common.model;
+package com.github.johan.backstrom.common.core.model.random;
 
 import java.util.Random;
 
