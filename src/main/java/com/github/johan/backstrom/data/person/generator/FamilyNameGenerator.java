@@ -17,12 +17,16 @@ public class FamilyNameGenerator extends NameGenerator {
         super(genderAttribute);
     }
 
+    public FamilyNameGenerator(Attribute<Gender> genderAttribute, long seedValue) {
+        super(genderAttribute, seedValue);
+    }
+
     protected void initWeightedNames() {
         Random random = DataHelper.getRandomness().getRandom();
         int numberOfItems = 10;
         List<String> selectedNames = new RandomPicker<String>().pick(random, Arrays.asList(SwedishNameDictionary.SURNAMES), numberOfItems);
         double[] weights = RandomNumberGenerator.generateWithSpecifiedSum(random, numberOfItems, 100);
-        weightedNames = new WeightedRandomizedCollection<>(random);
+        weightedNames = new WeightedRandomizedCollection<String>(random);
         for (int i = 0; i < numberOfItems; i++) {
             weightedNames.add(weights[i], selectedNames.get(i));
         }

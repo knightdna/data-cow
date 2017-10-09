@@ -17,16 +17,20 @@ public class FirstNameGenerator extends NameGenerator {
         super(genderAttribute);
     }
 
+    public FirstNameGenerator(Attribute<Gender> genderAttribute, long seedValue) {
+        super(genderAttribute, seedValue);
+    }
+
     protected void initWeightedNames() {
         Random random = DataHelper.getRandomness().getRandom();
-        RandomPicker<String> randomPicker = new RandomPicker<>();
+        RandomPicker<String> randomPicker = new RandomPicker<String>();
         int numberOfItems = 10;
         String[] names = genderAttribute.getValue().equals(Gender.Male) ?
                 SwedishNameDictionary.MALE_FIRST_NAMES :
                 SwedishNameDictionary.FEMALE_FIRST_NAMES;
         List<String> selectedNames = randomPicker.pick(random, Arrays.asList(names), numberOfItems);
         double[] weights = RandomNumberGenerator.generateWithSpecifiedSum(random, numberOfItems, 100);
-        weightedNames = new WeightedRandomizedCollection<>(random);
+        weightedNames = new WeightedRandomizedCollection<String>(random);
         for (int i = 0; i < numberOfItems; i++) {
             weightedNames.add(weights[i], selectedNames.get(i));
         }

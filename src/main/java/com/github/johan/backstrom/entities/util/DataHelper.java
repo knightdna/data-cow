@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DataHelper {
 
-    private static Randomness random = new DefaultRandomnessImplementation();;
+    private static Randomness random = new DefaultRandomnessImplementation();
 
     public static Randomness getRandomness() {
         return random;
