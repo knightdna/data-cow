@@ -1,21 +1,26 @@
-package com.github.johan.backstrom.common.util;
+package com.github.johan.backstrom.common.standard;
+
+import com.github.johan.backstrom.common.core.Randomness;
 
 import java.util.Random;
 
 public class DefaultRandomnessImplementation implements Randomness {
-
     private static Random random;
 
-    // Use the seed to generate consistent data when fetching by Id (i.e. use the Id as seed)
-    public DefaultRandomnessImplementation(long seed) {
-        if (random == null) {
+    public DefaultRandomnessImplementation(long seed){
+        if (random == null){
             random = new Random(seed);
         }
         random.setSeed(seed);
     }
 
-    public DefaultRandomnessImplementation() {
+    public DefaultRandomnessImplementation(){
         this(0);
+    }
+
+    @Override
+    public Random getRandom() {
+        return random;
     }
 
     @Override

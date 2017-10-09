@@ -1,8 +1,8 @@
 package com.github.johan.backstrom.entities.util;
 
 import com.github.johan.backstrom.common.core.Attribute;
-import com.github.johan.backstrom.common.util.DefaultRandomnessImplementation;
-import com.github.johan.backstrom.common.util.Randomness;
+import com.github.johan.backstrom.common.core.model.random.Randomness;
+import com.github.johan.backstrom.common.standard.DefaultRandomnessImplementation;
 import com.github.johan.backstrom.entities.Country;
 import com.github.johan.backstrom.entities.person.Gender;
 import com.google.common.base.Strings;
@@ -14,7 +14,11 @@ import java.util.List;
 
 public class DataHelper {
 
-    private static Randomness random = new DefaultRandomnessImplementation();
+    private static Randomness random = new DefaultRandomnessImplementation();;
+
+    public static Randomness getRandomness() {
+        return random;
+    }
 
     public static String getRandomFirstName(Attribute<Gender> genderAttribute) {
         return genderAttribute.getValue().equals(Gender.Male) ?

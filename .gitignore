@@ -1,5 +1,6 @@
 # Compiled class file
 *.class
+build/
 
 # Log file
 *.log
@@ -13,7 +14,8 @@
 *.rar
 
 .gradle
-.idea
-data-cow.iml
-build
 gradle.properties
+
+# IntelliJ files
+.idea/
+*.iml
