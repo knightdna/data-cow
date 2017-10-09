@@ -13,6 +13,8 @@
 *.rar
 
 .gradle
-.idea
-
 gradle.properties
+
+# IntelliJ files
+.idea
+.iml
