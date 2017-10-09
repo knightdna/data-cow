@@ -2,6 +2,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.johan.backstrom.common.DocumentBuilder;
 import com.github.johan.backstrom.common.core.Attribute;
 import com.github.johan.backstrom.common.standard.StandardAttribute;
+import com.github.johan.backstrom.data.person.generator.FamilyNameGenerator;
+import com.github.johan.backstrom.data.person.generator.FirstNameGenerator;
 import com.github.johan.backstrom.data.person.sweden.DataHelper;
 import com.github.johan.backstrom.data.person.Gender;
 import org.junit.Test;
@@ -12,15 +14,16 @@ public class FirstTest {
             "gender",
             dependencyAttributes -> Gender.Female
     );
+    gender.setValue(Gender.Female);
 
     Attribute<String> lastName = new StandardAttribute<>(
             "lastName",
-            dependencyAttributes -> DataHelper.getRandomLastName()
+            dependencyAttributes -> new FamilyNameGenerator(gender).generate()
     );
 
     Attribute<String> firstName = new StandardAttribute<>(
             "firstName",
-            dependencyAttributes -> DataHelper.getRandomFirstName(dependencyAttributes.get("gender"))
+            dependencyAttributes -> new FirstNameGenerator(gender).generate()
     );
 
     Attribute<String> phoneNumber = new StandardAttribute<>(

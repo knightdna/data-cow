@@ -1,11 +1,10 @@
 package com.github.johan.backstrom.common.standard;
 
-import com.github.johan.backstrom.common.core.Randomness;
+import com.github.johan.backstrom.common.core.model.random.Randomness;
 
 import java.util.Random;
 
-public class DefaultRandomnessImplementation implements Randomness{
-
+public class DefaultRandomnessImplementation implements Randomness {
     private static Random random;
 
     public DefaultRandomnessImplementation(long seed){
@@ -17,6 +16,11 @@ public class DefaultRandomnessImplementation implements Randomness{
 
     public DefaultRandomnessImplementation(){
         this(0);
+    }
+
+    @Override
+    public Random getRandom() {
+        return random;
     }
 
     @Override

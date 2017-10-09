@@ -2,7 +2,7 @@ package com.github.johan.backstrom.data.person.sweden;
 
 import com.github.johan.backstrom.common.DocumentBuilder;
 import com.github.johan.backstrom.common.core.Attribute;
-import com.github.johan.backstrom.common.core.Randomness;
+import com.github.johan.backstrom.common.core.model.random.Randomness;
 import com.github.johan.backstrom.common.standard.StandardAttribute;
 
 public class PersonBuilder {
